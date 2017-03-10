@@ -8,9 +8,16 @@
 </head>
 <body>
 <script>
-$('.btn').click(function () {
-    $('.display').hide();
+$(document).ready(function () {
+    $('.btn').click(function () {
+        if ($(this).id == 'percent')
+        {
+            document.calc.dsp.value = '%';
+        };
+    })
 })
+
+
 </script>
 
 <div class="calculator">
@@ -19,10 +26,10 @@ $('.btn').click(function () {
         <input type="text" class="display" id="dsp"><br>
 
       <!--  <button type="button" id="qwe"  class="btn" value="%" onclick="$('.btn').hide()">%</button> -->
-        <button type="button" class="btn" value="%">%</button>
-        <button type="button" class="btn" value="radic">&radic;</button>
-        <button type="button" class="btn" value="mul">*</button>
-        <button type="button" class="btn" value="del">/</button>
+        <button type="button" class="btn" id ="percent">%</button>
+        <button type="button" class="btn" id ="radic">&radic;</button>
+        <button type="button" class="btn" id ="mul">*</button>
+        <button type="button" class="btn" id ="del">/</button>
 <br>
 
         <input type="button" class="btn" value="7" onclick="document.calc.dsp.value = 7">
