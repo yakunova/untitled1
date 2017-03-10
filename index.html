@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/calc.css"/>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/calculator.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Калькулятор</title>
+</head>
+<body>
+
+<div class="calculator">
+    <form name="calc">
+        <input type="text" class="display" name="dsp"><br>
+
+        <button type="button" class="btn" value="%">%</button>
+        <button type="button" class="btn" value="radic">&radic;</button>
+        <button type="button" class="btn" value="mul">*</button>
+        <button type="button" class="btn" value="del">/</button>
+<br>
+
+        <input type="button" class="btn" value="7" onclick="document.calc.dsp.value = 7">
+        <input type="button" class="btn" value="8" onclick="document.calc.dsp.value = 8">
+        <input type="button" class="btn" value="9" onclick="document.calc.dsp.value = 9">
+        <input type="button" class="btn" value="c" onclick="document.calc.dsp.value = 'удалить символ'">
+<br>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button onclick="input = plus(4,5)">+</button><br>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button><br>
+
+        <button>+-</button>
+        <button>0</button>
+        <button>,</button>
+        <button>del</button><br>
+
+        <button>=</button>
+
+
+    </form>
+
+
+
+</div>
+
+<script>
+    // при нажатии по элементу <p> выведем текст, содержащий координаты клика
+    $("btn").bind("click", function(event){
+        var str = $.value;
+        $("display").text(str);
+    });
+
+</script>
+</body>
+</html>
