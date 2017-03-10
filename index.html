@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="css/calc.css"/>
     <meta charset="UTF-8">
     <script type="text/javascript" src="js/calculator.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <title>Калькулятор</title>
 </head>
 <body>
@@ -50,7 +50,6 @@
 </div>
 
 <script>
-    // при нажатии по элементу <p> выведем текст, содержащий координаты клика
     $("btn").bind("click", function(event){
         var str = $.value;
         $("display").text(str);
