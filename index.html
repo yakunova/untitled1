@@ -8,14 +8,15 @@
 </head>
 <body>
 <script>
-$('.btn').bind("click",function (onclick) {
-    $('.btn').hide();
+$('.btn').click(function () {
+    $('.display').hide();
 })
 </script>
 
 <div class="calculator">
     <form name="calc">
-        <input type="text" class="display" name="dsp"><br>
+        <input type="text" class="display" id="history"><br>
+        <input type="text" class="display" id="dsp"><br>
 
       <!--  <button type="button" id="qwe"  class="btn" value="%" onclick="$('.btn').hide()">%</button> -->
         <button type="button" class="btn" value="%">%</button>
