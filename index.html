@@ -3,16 +3,21 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/calc.css"/>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="js/calculator.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <title>Калькулятор</title>
 </head>
 <body>
+<script>
+$('.btn').bind("click",function (onclick) {
+    $('.btn').hide();
+})
+</script>
 
 <div class="calculator">
     <form name="calc">
         <input type="text" class="display" name="dsp"><br>
 
+      <!--  <button type="button" id="qwe"  class="btn" value="%" onclick="$('.btn').hide()">%</button> -->
         <button type="button" class="btn" value="%">%</button>
         <button type="button" class="btn" value="radic">&radic;</button>
         <button type="button" class="btn" value="mul">*</button>
@@ -50,10 +55,11 @@
 </div>
 
 <script>
+    /*
     $("btn").bind("click", function(event){
         var str = $.value;
         $("display").text(str);
-    });
+    });*/
 
 </script>
 </body>
