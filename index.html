@@ -9,14 +9,22 @@
             var hystory = '';
             var display;
             var result;
-            var op1,op2;
+            var op1 = NaN;
+            var op2 = NaN;
+            var act = NaN;
             $('.btn-c').on('click',function () {
                 var cur  = $(this).val();
                 hystory =  hystory + cur;
                 $('#history').val(hystory);
                 $('#dsp').val(cur);
-            })
+                if (op1 == NaN) {
+                    op1 = parseFloat(cur);
+                }
+
+            });
             $('.btn-act').on('click',function () {
+                hystory =  hystory + $(this).val();
+                $('#history').val(hystory);
                 switch ($(this).val()){
                     case '*':
                         alert('test');
