@@ -3,87 +3,62 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/calc.css"/>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!--<script src="/js/calculator.js"></script>-->
+    <script src="js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            var hystory;
+            var hystory = '';
             var display;
             var result;
-
+            var op1,op2;
             $('.btn-c').on('click',function () {
-
-                hystory=$(this).val();
-                $('#history').val($('#history').val() + hystory);
-                alert(hystory);
+                var cur  = $(this).val();
+                hystory =  hystory + cur;
+                $('#history').val(hystory);
+                $('#dsp').val(cur);
+            })
+            $('.btn-act').on('click',function () {
+                switch ($(this).val()){
+                    case '*':
+                        alert('test');
+                }
             })
         }
     )</script>
     <title>Калькулятор</title>
 </head>
 <body>
-<!--
-<script>
-$(document).ready(function () {
-    $('.btn').click(function () {
-        if ($(this).id == 'percent')
-        {
-            document.calc.dsp.value = '%';
-        };
-    })
-})
-</script>
--->
 <div class="calculator">
     <form name="calc">
-        <input type="text" class="display" id="history"><br>
-        <input type="text" class="display" id="dsp"><br>
+        <input type="text" class="display" id="history" title="123"><br>
+        <input type="text" class="display" id="dsp" title="456"><br>
 
-      <!--  <button type="button" id="qwe"  class="btn" value="%" onclick="$('.btn').hide()">%</button> -->
-        <input type="button" class="btn-act" id ="percent" value="%"></input>
-        <input type="button" class="btn-act" id ="radic"value=&radic;></input>
-        <input type="button" class="btn-act" id ="mul" value="*"></input>
-        <input type="button" class="btn-act" id ="del"value="/"></input>
+        <input type="button" class="btn-act" id ="percent" value="%">
+        <input type="button" class="btn-act" id ="radic" value=&radic;>
+        <input type="button" class="btn-act" id ="mul" value="*">
+        <input type="button" class="btn-act" id ="del" value="/">
 <br>
 
-        <input type="button" class="btn-c" value="7"></input>
-        <input type="button" class="btn-c" value="8"></input>
-        <input type="button" class="btn-c" value="9"></input>
-        <input type="button" class="btn-act"  value="c"></input><br>
+        <input type="button" class="btn-c" value="7">
+        <input type="button" class="btn-c" value="8">
+        <input type="button" class="btn-c" value="9">
+        <input type="button" class="btn-act"  value="c"><br>
 
-        <input type="button" class="btn-c" value ='4'></button>
-        <input type="button" class="btn-c" value ='5'></button>
-        <input type="button" class="btn-c" value ='6'></button>
-        <input type="button" class="btn-act" value ='+'></button><br>
+        <input type="button" class="btn-c" value ='4'>
+        <input type="button" class="btn-c" value ='5'>
+        <input type="button" class="btn-c" value ='6'>
+        <input type="button" class="btn-act" value ='+'><br>
 
-        <input type="button" class="btn-c" value ='1'></button>
-        <input type="button" class="btn-c" value ='2'></button>
-        <input type="button" class="btn-c" value ='3'></button>
-        <input type="button" class="btn-act" value ='-'></button><br>
+        <input type="button" class="btn-c" value ='1'>
+        <input type="button" class="btn-c" value ='2'>
+        <input type="button" class="btn-c" value ='3'>
+        <input type="button" class="btn-act" value ='-'><br>
 
-
-        <button>+-</button>
-        <button>0</button>
-        <button>,</button>
-        <button>del</button><br>
-
-        <button>=</button>
-
-
-
+        <input type="button" class="btn-act" value ='+-'>
+        <input type="button" class="btn-c" value ='0'>
+        <input type="button" class="btn-act" value ='.'>
+        <input type="button" class="btn-act" value ='del'><br>
+        <input type="button" class="btn-act" value ='='><br>
     </form>
-
-
-
 </div>
-
-<script>
-    /*
-    $("btn").bind("click", function(event){
-        var str = $.value;
-        $("display").text(str);
-    });*/
-
-</script>
 </body>
 </html>
