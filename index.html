@@ -7,12 +7,12 @@
     <script>
         $(document).ready(function () {
             var hystory = '';
-            var display;
+            var display='';
             var result;
             var op1 = NaN;
             var op2 = NaN;
             var act = NaN;
-            var fl1=0, fl2=0,fla=0;
+            var fl1=0, fl2=0,fla=0,fod=0;
 
             function calculate(a,op,b) {
                 switch (op){
@@ -30,38 +30,36 @@
                     }
                 }
             }
+
             $('.btn-c').on('click',function () {
-                var cur  = $(this).val();
-                hystory =  hystory + cur;
-                if (fla == 1){
+                if (fod == 1){
                     display = '';
+                    fod = 0;
                 }
-                display = display+cur;
-                $('#history').val(hystory);
+                display = display + $(this).val();
                 $('#dsp').val(display);
-
-
             });
 
             $('.btn-act').on('click',function () {
-                if (fl1 == 0){
-                    op1 = display;
+                if ( $(this).val() != '=') {
+                    //если знак после первого операнда
+                    if (fl1 == 0) {
+                        fla = 1;
+                        op1 = $('#dsp').val();
+                        fl1 = 1;
+                        act = $(this).val();
+                        fod = 1;
+                    }
+                    if(fod==0){
+                        fl2=1;
+                        op2 = $('#dsp').val();
+                        result = calculate(op1,act,op2).toString();
+                        $('#history').val(result);
+                        $('#dsp').val('');
+                        op1 = result;
+                    }
 
                 }
-               /* var curAct = $(this).val();
-                hystory =  hystory + curAct;
-                $('#history').val(hystory);
-                if (fl1 == 0){//если вводился первый операнд
-                    op1 = $('#dsp').val(); //присваиваем значени операнда
-                    fl1 = 1; //ставим флаг, что первый операнд есть
-                }
-                if (fl2 == 1)
-                {
-                    result = calculate(op1,act,op2);
-                }
-                act = curAct;
-                fla = 1;
-                */
             })
         }
     )</script>
