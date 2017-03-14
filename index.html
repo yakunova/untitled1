@@ -12,23 +12,56 @@
             var op1 = NaN;
             var op2 = NaN;
             var act = NaN;
+            var fl1=0, fl2=0,fla=0;
+
+            function calculate(a,op,b) {
+                switch (op){
+                    case "+":{
+                       return( parseFloat(a) + parseFloat(b))
+                    }
+                    case "-":{
+                        return( parseFloat(a) - parseFloat(b))
+                    }
+                    case "*":{
+                        return( parseFloat(a) * parseFloat(b))
+                    }
+                    case "/":{
+                        return( parseFloat(a) / parseFloat(b))
+                    }
+                }
+            }
             $('.btn-c').on('click',function () {
                 var cur  = $(this).val();
                 hystory =  hystory + cur;
-                $('#history').val(hystory);
-                $('#dsp').val(cur);
-                if (op1 == NaN) {
-                    op1 = parseFloat(cur);
+                if (fla == 1){
+                    display = '';
                 }
+                display = display+cur;
+                $('#history').val(hystory);
+                $('#dsp').val(display);
+
 
             });
+
             $('.btn-act').on('click',function () {
-                hystory =  hystory + $(this).val();
-                $('#history').val(hystory);
-                switch ($(this).val()){
-                    case '*':
-                        alert('test');
+                if (fl1 == 0){
+                    op1 = display;
+
                 }
+               /* var curAct = $(this).val();
+                hystory =  hystory + curAct;
+                $('#history').val(hystory);
+                if (fl1 == 0){//если вводился первый операнд
+                    op1 = $('#dsp').val(); //присваиваем значени операнда
+                    fl1 = 1; //ставим флаг, что первый операнд есть
+                }
+                if (fl2 == 1)
+                {
+                    result = calculate(op1,act,op2);
+                }
+                act = curAct;
+                fla = 1;
+                */
             })
         }
     )</script>
